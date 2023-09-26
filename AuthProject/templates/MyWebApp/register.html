@@ -1,0 +1,9 @@
+{% extends 'MyWebApp/base.html' %}
+{% load static %}
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        {{ register_form.as_p }}
+        <input type="submit" value="Register">
+    </form>
+{% endblock content %}
