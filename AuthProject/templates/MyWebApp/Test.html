@@ -1,26 +1,29 @@
-{% extends 'MyWebApp/base.html' %}
-{% load static %}
-{% block content %}
-
-
-    <h1>This is Home Page</h1>
-    <script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
         function validateform(){
     var name = document.form1.name.value;
     var password = document.form1.password.value;
 
     if (name==null || name==""){
-        alert("Username Can't be empty")
+        alert("Username Can't be empty");
         return false;
     }else if(password.length<6){
-        alert("Password must contain min of 6 Characters long")
+        alert("Password must contain min of 6 Characters long");
         return false;
     }
+    }
     </script>
-    <form name="form1" method="get" action="{% url 'success' %}" onsubmit=" return validateform()">
+</head>
+
+    <h1>This is Home Page</h1>
+
+    <form name="form1" action="" onsubmit=" return(validateform())">
         Name: <input type="text" name="name"><br>
         Password: <input type="password" name="password"><br>
         <input type="submit" value="Register">
     </form>
-{% csrf_token %}
-{% endblock content %}
+</html>

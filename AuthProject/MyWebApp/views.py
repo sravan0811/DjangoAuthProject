@@ -13,6 +13,9 @@ def contact(request):
 def home(request):
     return render(request,'MyWebApp/home.html')
 
+def success(request):
+    return render(request,'MyWebApp/success.html')
+
 def register_user(request):
     if request.method=='POST':
         form = NewUserForm(request.POST)
